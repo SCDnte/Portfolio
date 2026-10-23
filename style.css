@@ -14,8 +14,19 @@ header{
 	transition-duration: 150ms;
 }a:hover{
 	font-size: 125%;
-}.foto{
+}
+.main{
+	
+}
+.foto{
 	height:50pt;
 	box-shadow: 2pt 2pt 4pt black;
 	border-radius: 5pt;
+}.construccion{
+	height: 50pt;
+}footer{
+	background-color: gray;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
 }
