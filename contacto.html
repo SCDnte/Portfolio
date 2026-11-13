@@ -1,26 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<title>SCDnte</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>SCDnte</title>
 </head>
 <body>
-	<header>
-		<img src="SCDnte.jpg" class="foto">
-		<h1>Dante Schaer</h1>
-		<a href="index.html">Home</a>
-		<a href="index.html#proje">Proyectos</a>
-		<a href="contacto.html">Contacto</a>
-	</header>
-	<div class="main">
-			<h2>Contacto</h2>
-			<p>Por ahora tengo solamente una cuenta en X publica, debería agregar un mail</p>
-			<ul>
-				<li>
-					<a href="https://x.com/SCDnte1">Cuenta en X</a>
-				</li>
-			</ul>
-		</div>
-	<footer><i>Dante Schaer (2026)</i> <img src="en construccion.gif"></footer>
+    <header>
+        <img src="SCDnte.jpg" class="foto">
+        <h1>Dante Schaer</h1>
+        <a href="index.html">Home</a>
+        <a href="index.html#proje">Proyectos</a>
+        <a href="contacto.html">Contacto</a>
+    </header>
+
+    <div class="main">
+        <h2>Contacto</h2>
+        <p>Mis Redes Sociales</p>
+        <ul>
+            <li>
+                <a href="https://x.com/SCDnte1">Cuenta en X</a>
+            </li>
+            <li>
+                <a href="https://x.com/RetroDnte">Mi otra cuenta en X</a>
+            </li>
+        </ul>
+        <form id="contact-form">
+        	<label>Mandame un mail!</label><br>
+            <label for="asunto">Asunto:</label><br>
+            <input type="text" id="asunto" required><br><br>
+
+            <label for="mensaje">Mensaje:</label><br>
+            <textarea id="mensaje" rows="6" required></textarea><br><br>
+
+            <button type="submit">Enviar mensaje</button>
+        </form>
+    </div>
+
+    <footer>
+        <i>Dante Schaer (2026)</i>
+        <img src="en construccion.gif">
+    </footer>
+
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const destinatario = "menguantedante@gmail.com";
+            const asunto = document.getElementById("asunto").value;
+            const mensaje = document.getElementById("mensaje").value;
+
+            const cuerpo =mensaje;
+
+            window.location.href =
+                "mailto:" + destinatario +
+                "?subject=" + encodeURIComponent(asunto) +
+                "&body=" + encodeURIComponent(cuerpo);
+        });
+    </script>
 </body>
 </html>
